@@ -109,9 +109,9 @@ let result2 = {};
 
 describe('Positive test case for Substituting the values in payload using referenceData', () => {
     /*
-    * Test the POST route / Substituting the values with out using valueType
+    * Test the POST route / Substituting the values using valueType
     */
-    it('It should substitute the values with reference data with out using valueType', done => {
+    it('It should substitute the values with reference data using valueType', done => {
         chai
             .request(server)
             .post(`${url}/method1`)
@@ -128,9 +128,9 @@ describe('Positive test case for Substituting the values in payload using refere
     });
 
     /*
-    * Test the POST route / Substituting the values using valueType
+    * Test the POST route / Substituting the values without using valueType
     */
-    it('It should substitute the values with reference data using valueType', done => {
+    it('It should substitute the values with reference data witout using valueType', done => {
         chai
             .request(server)
             .post(`${url}/method2`)
@@ -187,7 +187,7 @@ describe('Negative test cases for substituting the values in payload using refer
     it('It should not substitute the payload values with reference data', done => {
         chai
             .request(server)
-            .post(`${url}/method2`)
+            .post(`${url}/method1`)
             .send({
                 payload,
                 referenceData: invalidReferenceData
